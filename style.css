@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    height: 200vh; /* To allow scrolling */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    height: 200vh; /* For scrolling */
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
@@ -19,12 +19,12 @@ body {
 
 .plane {
     width: 100%;
-    transition: transform 2s ease-out;
+    transition: transform 1s ease-out, bottom 1s ease-out;
 }
 
 .text-container {
     position: absolute;
-    top: 150vh;
+    top: 160vh; /* Ensures the text is far enough to be revealed later */
     width: 100%;
     text-align: center;
 }
@@ -32,6 +32,5 @@ body {
 .hidden-text {
     font-size: 36px;
     opacity: 0;
-    transition: opacity 2s;
+    transition: opacity 2s ease-in-out;
 }
-
