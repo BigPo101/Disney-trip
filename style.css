@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    height: 250vh; /* Increase the height for more scroll space */
+    height: 250vh; /* Plenty of scroll space */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -11,9 +11,9 @@ body {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%) scale(0.5); /* Start small and centered */
-    width: 100px;
-    height: 100px;
+    transform: translateX(-50%) scale(0.3); /* Start smaller and centered */
+    width: 150px; /* Larger starting width */
+    height: 150px;
     z-index: 1000;
     transition: transform 0.2s ease-out, bottom 0.2s ease-out;
 }
