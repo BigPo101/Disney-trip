@@ -11,9 +11,9 @@ body {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%) scale(0.3); /* Start smaller and centered */
-    width: 150px; /* Larger starting width */
-    height: 150px;
+    transform: translateX(-50%) scale(10%); /* Start very small */
+    width: 10vw; /* Initial size relative to the viewport */
+    height: auto; /* Maintain aspect ratio */
     z-index: 1000;
     transition: transform 0.2s ease-out, bottom 0.2s ease-out;
 }
