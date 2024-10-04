@@ -4,20 +4,24 @@ document.addEventListener('scroll', function() {
     const scrollPosition = window.scrollY;
     const windowHeight = window.innerHeight;
 
-    // Adjust the scroll range for the plane to move higher
-    const maxScroll = 1000; // Plane moves for the first 1000 pixels of scroll
-    const maxBottomPercent = 90; // Maximum position (in percentage of the viewport) from bottom to top
+    // Adjust the scroll range for the plane to move upwards
+    const maxScroll = 1000; // Plane moves upwards for the first 1000px
+    const maxBottomPercent = 90; // Maximum position in percentage of viewport (plane stops here when it hits the top)
 
-    // Make the plane move straight up and grow as you scroll
+    // Plane keeps moving off the screen after reaching the top
+    const offscreenThreshold = maxScroll + 500; // Plane will keep moving for another 500px after maxScroll
+
     if (scrollPosition <= maxScroll) {
-        // Move plane upwards based on scroll (as percentage of total scroll)
+        // Move the plane upwards (from bottom to near the top)
         let offsetYPercent = (scrollPosition / maxScroll) * maxBottomPercent;
-        
-        // Grow the plane up to 300% (or 3x the original size)
         let scalePercent = 20 + (scrollPosition / maxScroll) * 280; // Starts at 20%, grows to 300%
 
         plane.style.bottom = `${offsetYPercent}vh`;
-        plane.style.transform = `translateX(-50%) scale(${scalePercent / 100})`;  // Convert percent to scale
+        plane.style.transform = `translateX(-50%) scale(${scalePercent / 100})`;
+    } else if (scrollPosition > maxScroll && scrollPosition <= offscreenThreshold) {
+        // Continue moving the plane off the screen
+        let offsetYBeyond = maxBottomPercent + (scrollPosition - maxScroll) / 5; // Keeps going off-screen slowly
+        plane.style.bottom = `${offsetYBeyond}vh`;
     }
 
     // Fade in the text when the plane is almost at the top
