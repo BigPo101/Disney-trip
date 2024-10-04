@@ -13,8 +13,8 @@ document.addEventListener('scroll', function() {
         // Move plane upwards based on scroll (as percentage of total scroll)
         let offsetYPercent = (scrollPosition / maxScroll) * maxBottomPercent;
         
-        // Grow the plane much larger, up to 300% (or 3x the original size)
-        let scalePercent = 10 + (scrollPosition / maxScroll) * 290; // Starts at 10%, grows to 300%
+        // Grow the plane up to 300% (or 3x the original size)
+        let scalePercent = 20 + (scrollPosition / maxScroll) * 280; // Starts at 20%, grows to 300%
 
         plane.style.bottom = `${offsetYPercent}vh`;
         plane.style.transform = `translateX(-50%) scale(${scalePercent / 100})`;  // Convert percent to scale
