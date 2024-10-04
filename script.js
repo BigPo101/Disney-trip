@@ -16,7 +16,7 @@ document.addEventListener('scroll', function() {
         let offsetYPercent = (scrollPosition / maxScroll) * maxBottomPercent;
         
         // Scale the plane from a smaller size as it comes into view
-        let scalePercent = Math.min(0.2 + (scrollPosition / maxScroll) * 2.8, 3); // Scale starts at 20%, grows to 300%
+        let scalePercent = 0.2 + (scrollPosition / maxScroll) * 2.8; // Scale starts at 20%, grows to 300%
 
         plane.style.bottom = `${offsetYPercent - 100}vh`; // Adjust to start the plane from offscreen (-100vh)
         plane.style.transform = `translateX(-50%) scale(${scalePercent})`;
