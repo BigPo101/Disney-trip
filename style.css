@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    height: 200vh; /* To enable scrolling */
+    height: 250vh; /* Increase the height for more scroll space */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -24,7 +24,7 @@ body {
 
 .text-container {
     position: absolute;
-    top: 160vh; /* Makes the text appear only after significant scrolling */
+    top: 180vh; /* Ensures the text appears after enough scrolling */
     width: 100%;
     text-align: center;
 }
