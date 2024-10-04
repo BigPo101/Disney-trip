@@ -29,7 +29,7 @@ body {
     position: fixed;
     bottom: -100vh; /* Plane starts completely off the screen */
     left: 50%;
-    transform: translateX(-50%) scale(0.2); /* Start larger, at 20% of final size */
+    transform: translateX(-50%) scale(0.2); /* Start smaller, at 20% of final size */
     width: 20vw; /* Larger starting width (20% of viewport width) */
     height: auto; /* Maintain aspect ratio */
     z-index: 1000;
