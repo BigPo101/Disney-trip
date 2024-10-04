@@ -11,8 +11,8 @@ body {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-25%) scale(0.5); /* Start smaller and centered */
-    width: 300px; /* Larger starting width */
+    transform: translateX(-50%) scale(0.3); /* Start smaller and centered */
+    width: 150px; /* Larger starting width */
     height: 150px;
     z-index: 1000;
     transition: transform 0.2s ease-out, bottom 0.2s ease-out;
