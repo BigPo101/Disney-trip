@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    height: 250vh; /* Plenty of scroll space */
+    height: 300vh; /* Increase height for more scroll space */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -11,7 +11,7 @@ body {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%) scale(20%); /* Start larger, at 20% of final size */
+    transform: translateX(-50%) scale(0.2); /* Start larger, at 20% of final size */
     width: 20vw; /* Larger starting width (20% of viewport width) */
     height: auto; /* Maintain aspect ratio */
     z-index: 1000;
@@ -33,4 +33,21 @@ body {
     font-size: 36px;
     opacity: 0;
     transition: opacity 2s ease-in-out;
+}
+
+.extra-content {
+    position: relative;
+    top: 220vh; /* Place it below the current text */
+    padding: 50px;
+    text-align: center;
+}
+
+.extra-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.extra-content p {
+    font-size: 18px;
+    line-height: 1.6;
 }
