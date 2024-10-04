@@ -5,16 +5,19 @@ document.addEventListener('scroll', function() {
     const windowHeight = window.innerHeight;
 
     // Adjust the scroll range for the plane to move higher
-    const maxScroll = 1000; // Set how far up the plane can go
-    const maxBottom = windowHeight - 100; // Limit how far up the plane can move
+    const maxScroll = 1000; // Plane moves for the first 1000 pixels of scroll
+    const maxBottomPercent = 90; // Maximum position (in percentage of the viewport) from bottom to top
 
     // Make the plane move straight up and grow as you scroll
     if (scrollPosition <= maxScroll) {
-        let offsetY = (scrollPosition / maxScroll) * maxBottom;  // Plane moves straight up
-        let scale = 0.5 + (scrollPosition / maxScroll) * 0.5;  // Plane grows from scale 0.5 to 1
+        // Move plane upwards based on scroll (as percentage of total scroll)
+        let offsetYPercent = (scrollPosition / maxScroll) * maxBottomPercent;
+        
+        // Grow the plane much larger, up to 300% (or 3x the original size)
+        let scalePercent = 10 + (scrollPosition / maxScroll) * 290; // Starts at 10%, grows to 300%
 
-        plane.style.bottom = `${offsetY}px`;
-        plane.style.transform = `translateX(-50%) scale(${scale})`;
+        plane.style.bottom = `${offsetYPercent}vh`;
+        plane.style.transform = `translateX(-50%) scale(${scalePercent / 100})`;  // Convert percent to scale
     }
 
     // Fade in the text when the plane is almost at the top
