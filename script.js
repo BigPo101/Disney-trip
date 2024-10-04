@@ -11,14 +11,15 @@ document.addEventListener('scroll', function() {
     // Plane keeps moving off the screen after reaching the top
     const offscreenThreshold = maxScroll + 500; // Plane will keep moving for another 500px after maxScroll
 
-    // If scroll is high enough, move the plane up from off the screen
     if (scrollPosition <= maxScroll) {
         // Move the plane upwards (from below the screen to near the top)
         let offsetYPercent = (scrollPosition / maxScroll) * maxBottomPercent;
-        let scalePercent = 20 + (scrollPosition / maxScroll) * 280; // Starts at 20%, grows to 300%
+        
+        // Scale the plane from a smaller size as it comes into view
+        let scalePercent = Math.min(0.2 + (scrollPosition / maxScroll) * 2.8, 3); // Scale starts at 20%, grows to 300%
 
         plane.style.bottom = `${offsetYPercent - 100}vh`; // Adjust to start the plane from offscreen (-100vh)
-        plane.style.transform = `translateX(-50%) scale(${scalePercent / 100})`;
+        plane.style.transform = `translateX(-50%) scale(${scalePercent})`;
     } else if (scrollPosition > maxScroll && scrollPosition <= offscreenThreshold) {
         // Continue moving the plane off the screen
         let offsetYBeyond = maxBottomPercent + (scrollPosition - maxScroll) / 5; // Keeps going off-screen slowly
