@@ -11,8 +11,8 @@ body {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%) scale(10%); /* Start very small */
-    width: 10vw; /* Initial size relative to the viewport */
+    transform: translateX(-50%) scale(20%); /* Start very small */
+    width: 20vw; /* Initial size relative to the viewport */
     height: auto; /* Maintain aspect ratio */
     z-index: 1000;
     transition: transform 0.2s ease-out, bottom 0.2s ease-out;
